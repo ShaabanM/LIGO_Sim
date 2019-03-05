@@ -7,5 +7,13 @@ using namespace std;
 
 int main()
 {
-    //do nothing
+    rarray<double, 1> F(2);
+    rarray<double, 1> G(2);
+    F[0] = 0;
+    F[1] = 10;
+    G.fill(2);
+
+    double res = correlate(F,G);
+
+    cout << res << endl;
 }
