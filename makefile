@@ -18,7 +18,7 @@ all: exe
 
 # creat executable if object files exist
 exe: $(CXXOBJ)
-	$(CXX) $(CXXOBJ) -o zombie_sim -lnetcdf_c++4 
+	$(CXX) $(CXXOBJ) -o ligo_sim -lnetcdf_c++4 
 
 # create object files
 .cc.o: 
@@ -29,5 +29,5 @@ exe: $(CXXOBJ)
 .PHONY: clean
 clean:
 	rm -f *.o 
-	rm zombie_sim
+	rm ligo_sim
 
