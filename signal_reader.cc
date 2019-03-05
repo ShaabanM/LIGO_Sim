@@ -1,17 +1,25 @@
 #include "signal_reader.h"
 
-rarray<complex<double>, 1> read_signal(char *path)
+ligo_signal read_signal(char *path)
 {
-    netCDF::NcFile file(path, netCDF::NcFile::read);
-    rarray<std::complex<double>, 1> f(file.getDim("nt").getSize());
-    file.getVar("f").getVar(&f[0]);
+    ligo_signal sig;
 
-    return f;
+    netCDF::NcFile file(path, netCDF::NcFile::read);
+    rarray<std::complex<double>, 1> d(file.getDim("nt").getSize());
+    rarray<double, 1> t(file.getDim("nt").getSize());
+    file.getVar("f").getVar(&d[0]);
+    file.getVar("t").getVar(&t[0]);
+    sig.data = d;
+    sig.time = t;
+
+    return sig;
 }
 
 int main()
 {
-    rarray<complex<double>, 1> sig  = read_signal("gwdata/GWprediction.nc");
+    ligo_signal sig = read_signal("gwdata/GWprediction.nc");
 
-    cout << sig[0] << endl;
+    cout << sig.data[0] << endl;
+    cout << sig.time[0] << endl;
+    cout << sig.time[1] << endl;
 }
