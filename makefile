@@ -12,13 +12,14 @@ CXX = g++
 CXXSRC = $(shell ls *.cc) # list of all the source code files
 CXXOBJ = $(CXXSRC:.cc=.o) # list of files with same name as source but .o extention
 CXXFLAGS = -std=c++11 -O3 
+CXXLIBS = -lnetcdf_c++4 dscal -I${SCINETOPENBLASINC} -L${SCINETOPENBLASLIB} -lopenblas
 
 # dependency exe
 all: exe
 
 # creat executable if object files exist
 exe: $(CXXOBJ)
-	$(CXX) $(CXXOBJ) -o ligo_sim -lnetcdf_c++4 
+	$(CXX) $(CXXOBJ) -o ligo_sim $(CXXLIBS)
 
 # create object files
 .cc.o: 
