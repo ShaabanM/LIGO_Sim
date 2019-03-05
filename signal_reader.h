@@ -1,19 +1,9 @@
 #ifndef READER
 #define READER
-#include <rarray>
 #include <netcdf>
-#include <complex>
+#include "signal.h"
 
-// struct that will hold ligo signal data form netcdf files. data will hold the complex numbers and time will hold the times
-struct ligo_signal
-{
-    rarray<std::complex<double>, 1> data;
-    rarray<double, 1> time;
-};
-
-// Function that reads a netcdf simulated LIGO datafile and writes
-// it to an rarray.
-//
+// Function that reads a netcdf simulated LIGO datafile and writes it to an rarray.
 // Parameters:
 // path char array describing the path of the netcdf file to be read.
 ligo_signal read_signal(char *path);
