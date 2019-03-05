@@ -10,7 +10,7 @@ ligo_signal read_signal(char *path)
     file.getVar("f").getVar(&d[0]);
     file.getVar("t").getVar(&t[0]);
 
-    // store the rarrays in s ligo signal struct
+    // store the rarrays in ligo signal struct
     ligo_signal sig;
     sig.data = d;
     sig.time = t;
