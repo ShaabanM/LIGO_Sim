@@ -7,13 +7,11 @@ using namespace std;
 
 int main()
 {
-    rarray<double, 1> F(2);
-    rarray<double, 1> G(2);
-    F[0] = 0;
-    F[1] = 10;
-    G.fill(2);
+    rarray<std::complex<double>, 1> F(2);
+    std::complex<double> mycomplex(3.0, 4.0);
+    F[0] = mycomplex;
 
-    double res = correlate(F,G);
+    rarray<double, 1> res = power_spectrum(F);
 
-    cout << res << endl;
+    cout << "norm of " << F[0] << "is " << res[0] << endl;
 }
