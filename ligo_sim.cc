@@ -2,6 +2,7 @@
 #include "signal_power.h"
 #include "signal_reader.h"
 #include "correlator.h"
+#include "sort_print.h"
 
 using namespace std;
 
@@ -22,9 +23,10 @@ int main()
 
         //compute the correlations and store them in the correlations array
         double C = correlate(power_spectrum(signal_ft(sig_p)), power_spectrum(signal_ft(sig)));
+        
         Cs[i] = C;
     }
 
     // sort the results array and print the 5 data sets with heighest correlation to the prediction
-    //sort_print(Cs);
+    sort_print(Cs);
 }

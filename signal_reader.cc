@@ -18,6 +18,7 @@ ligo_signal read_signal(std::string path)
     return sig;
 }
 
+// Implementation of get path function
 std::string get_path(int i)
 {
     std::string path;
