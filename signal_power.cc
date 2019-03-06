@@ -1,23 +1,13 @@
-/*#include "signal_power.h"
+#include "signal_power.h"
 
 rarray<double, 1> power_spectrum(rarray<std::complex<double>, 1> ft)
 {
+    rarray<double, 1> F(ft.size());
 
-    fk = //output of FFT;
-
-    rarray<double,1> F(fk.size());
-
-    for(size_t i = 0; i < fk.size(); i++)
+    for (size_t i = 0; i < ft.size(); i++)
     {
-        F[i] = Fk(fk);
+        F[i] = std::norm(ft[i]);
     }
 
     return F;
-    
 }
-
-double Fk(rarray<std::complex<double>, 1> fk)
-{
-    return cblas_cdotc(fk.size(), fk.data(), 1, fk.data(), 1);
-}
-*/
