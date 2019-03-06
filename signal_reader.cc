@@ -17,3 +17,21 @@ ligo_signal read_signal(std::string path)
 
     return sig;
 }
+
+std::string get_path(int i)
+{
+    std::string path;
+    if (i < 9)
+    {
+        path = "gwdata/detection0";
+        path += std::to_string(i + 1);
+        path += ".nc";
+    }
+    else
+    {
+        path = "gwdata/detection";
+        path += std::to_string(i + 1);
+        path += ".nc";
+    }
+    return path;
+}

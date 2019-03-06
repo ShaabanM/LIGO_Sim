@@ -2,37 +2,29 @@
 #include "signal_power.h"
 #include "signal_reader.h"
 #include "correlator.h"
-#include "sort_print"
 
 using namespace std;
 
 int main()
 {
+    // number of detections to be read
     int nd = 32;
 
-    ligo_signal sig_p = read_signal("gwdata/GWprediction.nc");
-    std::string path;
+    // array for storing the calculated coefficients
     rarray<double, 1> Cs(nd);
 
+    // read the netcdf data
+    ligo_signal sig_p = read_signal("gwdata/GWprediction.nc");
     for (size_t i = 0; i < nd; i++)
     {
-        if (i < 9)
-        {
-            path = "gwdata/detection0";
-            path += std::to_string(i + 1);
-            path += ".nc";
-        }
-        else
-        {
-            path = "gwdata/detection";
-            path += std::to_string(i + 1);
-            path += ".nc";
-        }
-
+        std::string path = get_path(i);
         ligo_signal sig = read_signal(path);
+
+        //compute the correlations and store them in the correlations array
         double C = correlate(power_spectrum(signal_ft(sig_p)), power_spectrum(signal_ft(sig)));
         Cs[i] = C;
     }
 
-    sort_print(Cs);
+    // sort the results array and print the 5 data sets with heighest correlation to the prediction
+    //sort_print(Cs);
 }
