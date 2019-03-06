@@ -11,8 +11,8 @@ CXX = g++
 # Define useful shortcuts to access all cc files and o files
 CXXSRC = $(shell ls *.cc) # list of all the source code files
 CXXOBJ = $(CXXSRC:.cc=.o) # list of files with same name as source but .o extention
-CXXFLAGS = -std=c++11 -O3 
-CXXLIBS = -lnetcdf_c++4 -I${BLAS_INC} -L${BLAS_LIB} -lopenblas
+CXXFLAGS = -std=c++11 -O3 -I${BLAS_INC}
+CXXLIBS = -lnetcdf_c++4 -L${BLAS_LIB} -lopenblas -lfftw3
 
 # dependency exe
 all: exe

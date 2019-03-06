@@ -1,7 +1,7 @@
 #include "signal_reader.h"
 
 // Implementation of the netcdf ligo signal reader function.
-ligo_signal read_signal(char *path)
+ligo_signal read_signal(std::string path)
 {
     // open the netcdf file in read mode and store the content as rarrays
     netCDF::NcFile file(path, netCDF::NcFile::read);

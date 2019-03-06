@@ -6,6 +6,6 @@
 // Function that reads a netcdf simulated LIGO datafile and writes it to an rarray.
 // Parameters:
 // path char array describing the path of the netcdf file to be read.
-ligo_signal read_signal(char *path);
+ligo_signal read_signal(std::string path);
 
 #endif // !READER

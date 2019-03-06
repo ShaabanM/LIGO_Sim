@@ -7,11 +7,19 @@ using namespace std;
 
 int main()
 {
-    rarray<std::complex<double>, 1> F(2);
-    std::complex<double> mycomplex(3.0, 4.0);
-    F[0] = mycomplex;
+    int nd = 32;
 
-    rarray<double, 1> res = power_spectrum(F);
+    ligo_signal sig_p = read_signal("gwdata/GWprediction.nc");
 
-    cout << "norm of " << F[0] << "is " << res[0] << endl;
+    for (size_t i = 0; i < nd; i++)
+    {
+
+        std::string path = "gwdata/detection";
+        path += std::to_string(i + 1);
+        path += ".nc";
+
+        ligo_signal sig = read_signal(path);
+        double C = correlate(power_spectrum(signal_ft(sig_p)), power_spectrum(signal_ft(sig)));
+        cout << C << endl;
+    }
 }
