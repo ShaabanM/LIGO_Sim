@@ -23,7 +23,7 @@ int main()
 
         //compute the correlations and store them in the correlations array
         double C = correlate(power_spectrum(signal_ft(sig_p)), power_spectrum(signal_ft(sig)));
-        
+
         Cs[i] = C;
     }
 
