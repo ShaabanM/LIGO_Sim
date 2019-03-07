@@ -1,0 +1,34 @@
+The top 5 in order are:
+1) Data set #20 with C = 0.99222
+2) Data set #15 with C = 0.967221
+3) Data set #1 with C = 0.939055
+4) Data set #17 with C = 0.896847
+5) Data set #2 with C = 0.887038
+===========The rest============
+6) Data set #18 with C = 0.87365
+7) Data set #14 with C = 0.859163
+8) Data set #3 with C = 0.749303
+9) Data set #13 with C = 0.744845
+10) Data set #29 with C = 0.730712
+11) Data set #19 with C = 0.727012
+12) Data set #30 with C = 0.652491
+13) Data set #12 with C = 0.639159
+14) Data set #28 with C = 0.629183
+15) Data set #4 with C = 0.612952
+16) Data set #5 with C = 0.552329
+17) Data set #21 with C = 0.529308
+18) Data set #27 with C = 0.528535
+19) Data set #11 with C = 0.527679
+20) Data set #26 with C = 0.436053
+21) Data set #31 with C = 0.435728
+22) Data set #6 with C = 0.433699
+23) Data set #10 with C = 0.432781
+24) Data set #22 with C = 0.406748
+25) Data set #25 with C = 0.345294
+26) Data set #7 with C = 0.340906
+27) Data set #23 with C = 0.335255
+28) Data set #9 with C = 0.324875
+29) Data set #32 with C = 0.320668
+30) Data set #8 with C = 0.287609
+31) Data set #24 with C = 0.27105
+32) Data set #16 with C = 0.071921
